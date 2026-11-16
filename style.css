@@ -1,0 +1,156 @@
+
+/* PAGE BACKGROUND */
+body {
+  background: #000000;
+  color: #b57aff;
+  font-family: Georgia, serif;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* FOUR BOXES */
+.box1, .box2, .box3, .box4 {
+  display: none;
+  width: 350px;
+  max-width: 85vw;
+  padding: 30px;
+  background: #080808;
+  color: #b57aff;
+  border: 2px solid #ff69b4;
+  border-radius: 20px;
+  text-align: center;
+  font-style: italic;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.25);
+  box-sizing: border-box;
+}
+
+/* FIRST BOX */
+.box1 {
+  display: block;
+}
+
+/* HEADINGS */
+h1, h2 {
+  color: #bf80ff;
+  font-style: italic;
+}
+
+/* PARAGRAPHS */
+p {
+  color: #b57aff;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* BUTTONS */
+button {
+  background: #a020f0;
+  color: white;
+  border: 1px solid #ff69b4;
+  padding: 12px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-style: italic;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #d000ff;
+  box-shadow: 0 0 12px #bf80ff;
+}
+
+/* BOX 4 */
+.box4 {
+  position: relative;
+  overflow: hidden;
+}
+
+/* YES BUTTON */
+.yes-btn {
+  background: #a020f0;
+  transition: transform 0.3s ease;
+}
+
+/* NO BUTTON */
+.no-btn {
+  position: absolute;
+  left: 200px;
+  top: 150px;
+  background: #111111;
+  color: #bf80ff;
+}
+
+/* CELEBRATION */
+.box4.celebration {
+  display: block;
+  background: #080808;
+  position: relative;
+  min-height: 250px;
+}
+
+/* FLOATING HEARTS */
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 12px;
+  color: #a020f0;
+  animation: floatUp 4s linear forwards;
+  pointer-events: none;
+}
+
+/* HEART MOVEMENT */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.7);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-300px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+
+/* BACKGROUND HEARTS */
+.bg-heart {
+  position: fixed;
+  bottom: -20px;
+  color: #8000ff;
+  font-size: 10px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  animation: backgroundHearts 10s linear infinite;
+}
+
+@keyframes backgroundHearts {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* Keep boxes above hearts */
+.box1, .box2, .box3, .box4 {
+  position: relative;
+  z-index: 1;
+}
